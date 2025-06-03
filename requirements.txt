@@ -1,6 +1,6 @@
 flask
 flask-socketio
 pymongo
-gevent==21.12.0
+gevent>=22.10.2
 greenlet==1.1.2
 gunicorn
