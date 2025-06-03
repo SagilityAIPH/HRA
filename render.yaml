@@ -3,7 +3,7 @@ services:
     name: hra-sms-app
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn main:app --worker-class gevent -w 1 -b 0.0.0.0:$PORT
+    startCommand: gunicorn main:app --worker-class eventlet -w 1 -b 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.11
