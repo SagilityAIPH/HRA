@@ -3,10 +3,10 @@ import webbrowser
 from website import create_app, socketio
 import ssl
 
-cert_file = 'certificate.pem'
-key_file = 'private_key.pem'
-context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-context.load_cert_chain(certfile=cert_file, keyfile=key_file)
+# cert_file = 'certificate.pem'
+# key_file = 'private_key.pem'
+# context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+# context.load_cert_chain(certfile=cert_file, keyfile=key_file)
 
 
 #ssh -i carj.concepcion.pem carj.concepcion@54.159.96.180
