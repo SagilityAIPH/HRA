@@ -6,7 +6,8 @@ from pymongo import MongoClient
 from bson import ObjectId
 views = Blueprint('views', __name__)
 
-client = MongoClient("mongodb+srv://carjgilson:hraAdmin@hra.msyxf.mongodb.net/?retryWrites=true&w=majority&appName=HRA")
+client = MongoClient("mongodb://carjgilson:hraAdmin@hra-shard-00-00.msyxf.mongodb.net:27017,hra-shard-00-01.msyxf.mongodb.net:27017,hra-shard-00-02.msyxf.mongodb.net:27017/HRA?ssl=true&replicaSet=atlas-10rf9q-shard-0&authSource=admin&retryWrites=true&w=majority")
+# client = MongoClient("mongodb+srv://carjgilson:hraAdmin@hra.msyxf.mongodb.net/?retryWrites=true&w=majority&appName=HRA")
 db = client["HRA"]
 collection = db["HRA_Data"]
 
