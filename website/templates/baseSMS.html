@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    <link rel="stylesheet" href="{{ url_for('static',filename='/bootstrap-5.3.3/dist/css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='/bootstrap-5.3.3/dist/css/bootstrap.min.css') }}">
+    <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"
+      integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO" 
+      crossorigin="anonymous"></script>
+
+    <title>{% block title %}Home{% endblock %}</title>
+    <style>
+      body{
+            /* background-image: url("{{ url_for('static',filename='/img/bgimg1.jpg') }}"); */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            opacity: 0.9;
+            height: 100hv;
+            margin: 0;            
+        }
+      .fw-bold-custom{
+        font-weight: 900;
+      }
+      .btn-check-custom{
+        color: black;
+        border: 2px solid;
+      }
+      .btn-check:checked + .btn-check-custom{
+        background-color: #114A21;
+        color: white;
+        border-color: #114A21;
+      }
+      /* .btn-check:hover + .btn-check-custom{
+               border-color: #78BE20;
+      } */
+      .btn-progress{
+               background-color: #78BE20;
+               border-radius: 10%;
+               color: #FFFFFF;
+               font-weight: 900;
+      }
+      .lbl-question{
+        font-family: 'Arial';
+      }
+      
+      @media only screen and (max-width: 768px) {
+      body {
+            background-size: cover;
+            background-attachment: fixed; 
+            background-size: 100% 100%;
+          }
+      }
+    
+    </style>
+</head>
+<body>
+  
+    <nav class="navbar navbar-expand-sm fixed-top" style="background-color: #FFFFFF; border-top: 30px solid #78BE20;border-bottom: 3px solid #dedede;">
+      <div class="container-fluid">
+        <div class="col">
+        <img src="{{ url_for('static',filename='/img/h.png') }}" alt="Logo" style="width: 58px; height: 68px;" class="me-2">
+        <img src="{{ url_for('static',filename='/img/humana.png') }}" alt="Logo" style="width: 165px; height: 50px;" class="me-2">
+        </div>
+        <ul class="navbar-nav  mb-2 mb-lg-0">
+          <li class="nav-item d-flex">
+            <a class="nav-link active" style="color: #114A21; font-family: Calibri, Helvetica, Arial, SF Pro Text, Roboto, sans-serif; font-size: larger;" id="userName">{{ full_name }}<br>H123456</a>
+          </li>
+        </ul>
+        
+      </div>
+      
+    </nav>
+    <br><br><br><br><br><br><br><br>
+
+    <div class="alert alert-dismissible alert-success position-fixed" id="alertMessage" style="top: 50%; left: 50%; display: none; transform: translate(-50%, -50%); z-index: 1050;">
+      
+      <h5 class="alert-heading">Warning!</h5>
+      <p class="mb-0">Please select at least one</p>
+    </div>
+
+    <div class="container">
+    {% block content %}
+    {% endblock %} 
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    
+    <script type="text/javascript" src="{{ url_for('static',filename='/bootstrap-5.3.3/dist/js/bootstrap.min.js') }}"></script>
+
+    <!-- {% block javascript %} -->
+    <script type="text/javascript" src="{{ url_for('static',filename='index.js') }}"></script>
+    <!-- {% endblock %} -->
+
+  
+</body>
+</html>

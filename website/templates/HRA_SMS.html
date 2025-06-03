@@ -1,0 +1,663 @@
+{% extends "baseSMS.html"%}
+
+{% block title %}HRA SMS{% endblock %}
+
+
+{%block content%}
+    <div class="border m-3 bg-gradient rounded-5 border-primary" style="background-color: #EFF5E6;">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="mb-3 pt-4 ps-4 me-3">
+                    <div class="row">
+                        <div class="col d-flex justify-content-end">
+                            <h4 class="fw-bold me-3" id="numQuestion">1/20 </h4>
+                        </div>
+                    </div>
+                    <div class="container rounded-2" id="question1">
+                        <div class="row justify-content-center pt-2">
+                            <p class="form-label text-left fs-4 fw-bold-custom lbl-question">1.) What health conditions do you currently have or are managing</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3 justify-content-center">
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check" id="none" name="question1N" value="none">
+                                    <label class="btn w-100 btn-check-custom" for="none" >None / Prefer not to answer</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="diabetes" name="question1N" value="Diabetes">
+                                    <label class="btn w-100 btn-check-custom" for="diabetes" >Diabetes</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="asthma" name="question1N" value="Asthma">
+                                    <label class="btn w-100 btn-check-custom" for="asthma" >Asthma</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="COPD" name="question1N" value="COPD">
+                                    <label class="btn w-100 btn-check-custom" for="COPD" >COPD</label>
+                                </div> 
+                            </div>
+
+                            <div class="col-md-3 justify-content-center">
+                                <div class="pb-1">
+                                    <input type="checkbox" class=" btn btn-check " id="Emphysema" name="question1N" value="Emphysema / Other Lung Condition">
+                                    <label class="btn w-100 btn-check-custom" for="Emphysema" >Emphysema / Other Lung Condition</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="cardiovascularDisease" name="question1N" value="Cardiovascular Disease">
+                                    <label class="btn w-100 btn-check-custom" for="cardiovascularDisease">Cardiovascular Disease</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="AMI" name="question1N" value="Previous Heart Attack or AMI">
+                                    <label class="btn w-100 btn-check-custom" for="AMI">Previous Heart Attack or Acute Myocardial Infarction (AMI)</label>
+                                </div> 
+                            </div>
+
+                            <div class="col-md-3 justify-content-center">
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="highBloodPressure" name="question1N" value="High Blood Pressure">
+                                    <label class="btn w-100 btn-check-custom" for="highBloodPressure">High Blood Pressure</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="highCholesterol" name="question1N" value="High Cholesterol">
+                                    <label class="btn w-100 btn-check-custom" for="highCholesterol" >High Cholesterol</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="stroke" name="question1N" value="Stroke">
+                                    <label class="btn w-100 btn-check-custom" for="stroke" >Stroke</label>
+                                </div> 
+                            </div>
+
+                            <div class="col-md-3 justify-content-center">
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check " id="cancer" name="question1N" value="Cancer">
+                                    <label class="btn w-100 btn-check-custom" for="cancer">Cancer</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check" id="HIV" name="question1N" value="HIV/AIDS">
+                                    <label class="btn w-100 btn-check-custom" for="HIV">HIV / AIDS</label>
+                                </div>
+                                <div class="pb-1">
+                                    <input type="checkbox" class="btn btn-check" id="kidneyDisease" name="question1N" value="Kidney Disease">
+                                    <label class="btn w-100 btn-check-custom" for="kidneyDisease">Kidney Disease / Kidney Failure on Dialysis</label>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="justify-content-end d-flex">
+                                <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question2">Next</button>
+                                <!-- <button class="btn btn-secondary ms-1 btn-progress" id="btnUpdate" >Update</button> -->
+                            </div>
+                        </div>
+                    </div><!-- <div class="container rounded-2 " > Question2 -->
+
+                        <div class="container rounded-2 d-none" id="question2">
+                            <div class="row justify-content-center pt-2">
+                                <p class="form-label text-left fs-4 fw-bold-custom lbl-question">2.) On a scale of 0 - 10, what is your current day-to-day pain level? (0 = no pain, 10 = the most pain you've ever felt)</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numZero" name="question2N" value="0">
+                                    <label class="btn w-100 btn-check-custom" for="numZero" >0</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numOne" name="question2N" value="1">
+                                    <label class="btn w-100 btn-check-custom" for="numOne" >1</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numTwo" name="question2N" value="2">
+                                    <label class="btn w-100 btn-check-custom" for="numTwo" >2</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numThree" name="question2N" value="3">
+                                    <label class="btn w-100 btn-check-custom" for="numThree" >3</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numFour" name="question2N" value="4">
+                                    <label class="btn w-100 btn-check-custom" for="numFour" >4</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numFive" name="question2N" value="5">
+                                    <label class="btn w-100 btn-check-custom" for="numFive" >5</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numSix" name="question2N" value="6">
+                                    <label class="btn w-100 btn-check-custom" for="numSix" >6</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numSeven" name="question2N" value="7">
+                                    <label class="btn w-100 btn-check-custom" for="numSeven" >7</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numEight" name="question2N" value="8">
+                                    <label class="btn w-100 btn-check-custom" for="numEight" >8</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numNine" name="question2N" value="9">
+                                    <label class="btn w-100 btn-check-custom" for="numNine" >9</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-1">
+                                    <input type="radio" class="btn-check " id="numTen" name="question2N" value="10">
+                                    <label class="btn w-100 btn-check-custom" for="numTen" >10</label>
+                                </div>
+    
+                            </div>
+                            <div class="row">
+                                <div class="justify-content-end d-flex pt-2">
+                                    <div class="pe-2">
+                                        <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question1">Prev</button>
+                                    </div>
+                                    <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question3">Next</button>
+                                    
+                                </div>
+                            </div>
+                        </div><!-- <div class="container rounded-2 " > Question3 -->
+
+                        <div class="container rounded-2 d-none" id="question3">
+                            <div class="row justify-content-center pt-2">
+                                <p class="form-label text-left fs-4 fw-bold-custom lbl-question">3.) In the past month, did you need help with any of the following. Choose all that apply.</p>
+                            </div>
+                            <div class="row justify-content-center">
+                                <div class="pb-1 pe-1 col-md-3">
+                                    <input type="checkbox" class="btn-check " id="walking" name="question3N" value="Getting around your home (walking)">
+                                    <label class="btn w-100 btn-check-custom" for="walking" >Getting around your home (walking)</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-3">
+                                    <input type="checkbox" class="btn-check " id="Feeding" name="question3N" value="Feeding yourself">
+                                    <label class="btn w-100 btn-check-custom" for="Feeding" >Feeding <br> yourself</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-3">
+                                    <input type="checkbox" class="btn-check " id="Getting" name="question3N" value="Getting in or out of bed or a chair">
+                                    <label class="btn w-100 btn-check-custom" for="Getting" >Getting in or out of bed or a chair</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-3">
+                                    <input type="checkbox" class="btn-check " id="bathing" name="question3N" value="Caring for yourself">
+                                    <label class="btn w-100 btn-check-custom" for="bathing" >Caring for yourself, including bathing</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-3">
+                                    <input type="checkbox" class="btn-check " id="Dressing" name="question3N" value="Dressing yourself">
+                                    <label class="btn w-100 btn-check-custom" for="Dressing" >Dressing yourself</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-3">
+                                    <input type="checkbox" class="btn-check " id="toilet" name="question3N" value="Using the toilet">
+                                    <label class="btn w-100 btn-check-custom" for="toilet" >Using the toilet</label>
+                                </div>
+                                <div class="pb-1 pe-1 col-md-3">
+                                    <input type="checkbox" class="btn-check " id="NoIssues" name="question3N" value="No issues at this time"> 
+                                    <label class="btn w-100 btn-check-custom" for="NoIssues" >No issues at this time</label>
+                                </div>                                
+                            </div>
+
+                            <div class="row">
+                                <div class="justify-content-end d-flex pt-2">
+                                    <div class="pe-2">
+                                        <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question2">Prev</button>
+                                    </div>
+                                    <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question4">Next</button>
+                                    
+                                </div>
+                            </div>
+                        </div><!-- <div class="container rounded-2 " > Question4 -->
+
+                            <div class="container rounded-2 d-none" id="question4">
+                                <div class="row justify-content-center pt-2">
+                                    <p class="form-label text-left fs-4 fw-bold-custom lbl-question">4.)In the past month, how many times have you fallen?.</p>
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="pb-1 pe-1 col-md-3">
+                                        <input type="radio" class="btn-check " id="Nun" name="question4N" value="none">
+                                        <label class="btn w-100 btn-check-custom" for="Nun" >None</label>
+                                    </div>
+                                    <div class="pb-1 pe-1 col-md-3">
+                                        <input type="radio" class="btn-check " id="Onetime" name="question4N" value="One Time">
+                                        <label class="btn w-100 btn-check-custom" for="Onetime" >One time</label>
+                                    </div>
+                                    <div class="pb-1 pe-1 col-md-3">
+                                        <input type="radio" class="btn-check " id="twox" name="question4N" value="Two times">
+                                        <label class="btn w-100 btn-check-custom" for="twox" >Two times</label>
+                                    </div>
+                                    <div class="pb-1 pe-1 col-md-3">
+                                        <input type="radio" class="btn-check " id="three" name="question4N" value="Three times">
+                                        <label class="btn w-100 btn-check-custom" for="three" >Three or more times</label>
+                                    </div>
+                                    <div class="pb-1 pe-1 col-md-3">
+                                        <input type="radio" class="btn-check " id="dontknow" name="question4N" value="dont know">
+                                        <label class="btn w-100 btn-check-custom" for="dontknow" >Don't know</label>
+                                    </div>
+                                  
+        
+                                </div>
+                                <div class="row">
+                                    <div class="justify-content-end d-flex pt-2">
+                                        <div class="pe-2">
+                                            <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question3">Prev</button>
+                                        </div>
+                                        <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question5">Next</button>
+                                        
+                                    </div>
+                                </div>
+                            </div><!-- <div class="container rounded-2 " > Question5 -->
+
+                                <div class="container rounded-2 d-none" id="question5">
+                                    <div class="row justify-content-center pt-2">
+                                        <p class="form-label text-left fs-4 fw-bold-custom lbl-question">5.)In the past 12 months, how many times did you visit the emergency room or stay in the hospital as a patient?.</p>
+                                    </div>
+                                    <div class="row justify-content-center">
+                                        <div class="pb-1 pe-1 col-md-3">
+                                            <input type="radio" class="btn-check " id="Nunx" name="question5N" value="None">
+                                            <label class="btn w-100 btn-check-custom" for="Nunx" >None</label>
+                                        </div>
+                                        <div class="pb-1 pe-1 col-md-3">
+                                            <input type="radio" class="btn-check " id="Onetimex" name="question5N" value="One time">
+                                            <label class="btn w-100 btn-check-custom" for="Onetimex" >One time</label>
+                                        </div>
+                                        <div class="pb-1 pe-1 col-md-3">
+                                            <input type="radio" class="btn-check " id="Twox" name="question5N" value="Two time">
+                                            <label class="btn w-100 btn-check-custom" for="Twox" >Two times</label>
+                                        </div>
+                                        <div class="pb-1 pe-1 col-md-3">
+                                            <input type="radio" class="btn-check " id="threex" name="question5N" value="Three time">
+                                            <label class="btn w-100 btn-check-custom" for="threex" >Three or more times</label>
+                                        </div>
+                                        <div class="pb-1 pe-1 col-md-3">
+                                            <input type="radio" class="btn-check " id="dontknowx" name="question5N" value="Dont Know">
+                                            <label class="btn w-100 btn-check-custom" for="dontknowx" >Don't know</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="justify-content-end d-flex pt-2">
+                                            <div class="pe-2">
+                                                <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question4">Prev</button>
+                                            </div>
+                                            <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question6">Next</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div><!-- <div class="container rounded-2 " > Question6 -->
+
+                                    <div class="container rounded-2 d-none" id="question6">
+                                        <div class="row justify-content-center pt-2">
+                                            <p class="form-label text-left fs-4 fw-bold-custom lbl-question">6.)In the past 12 months, how many times did you stay overnight at the hospital as a patient?</p>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="Nun6" name="question6N" value="None">
+                                                <label class="btn w-100 btn-check-custom" for="Nun6" >None</label>
+                                            </div>
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="Onetime6" name="question6N" value="One time">
+                                                <label class="btn w-100 btn-check-custom" for="Onetime6" >One time</label>
+                                            </div>
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="Two6" name="question6N" value="Two times">
+                                                <label class="btn w-100 btn-check-custom" for="Two6" >Two times</label>
+                                            </div>
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="three6" name="question6N" value="Three times or more">
+                                                <label class="btn w-100 btn-check-custom" for="three6" >Three or more times</label>
+                                            </div>
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="dontknow6" name="question6N" value="Dont knows">
+                                                <label class="btn w-100 btn-check-custom" for="dontknow6" >Don't know</label>
+                                            </div>
+                                            <div class="row">
+                                                <div class="justify-content-end d-flex pt-2">
+                                                    <div class="pe-2">
+                                                        <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question5">Prev</button>
+                                                    </div>
+                                                    <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question7">Next</button>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div><!-- <div class="container rounded-2 " > Question7 -->
+
+                                    <div class="container rounded-2 d-none" id="question7">
+                                        <div class="row justify-content-center pt-2">
+                                            <p class="form-label text-left fs-4 fw-bold-custom lbl-question">7.)In the past month, have you had a mood change that caused you to feel depressed, anxious or hopeless because you had little intereset in things that used to interest you?</p>
+                                        </div>
+                                        <div class="row justify-content-center">
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="Yes7" name="question7N" value="Yes">
+                                                <label class="btn w-100 btn-check-custom" for="Yes7" >Yes</label>
+                                            </div>
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="No7" name="question7N" value="No">
+                                                <label class="btn w-100 btn-check-custom" for="No7" >No</label>
+                                            </div>
+                                            <div class="pb-1 pe-1 col-md-3">
+                                                <input type="radio" class="btn-check " id="Dontknow7" name="question7N" value="Dont Know">
+                                                <label class="btn w-100 btn-check-custom" for="Dontknow7" >Don't know</label>
+                                            </div>                                             
+                                        </div>
+                                        <div class="row">
+                                            <div class="justify-content-end d-flex pt-2">
+                                                <div class="pe-2">
+                                                    <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question6">Prev</button>
+                                                </div>
+                                                <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question8">Next</button>
+                                                <button class="btn btn-secondary ms-1 btn-progress" id="btnSubmit" >Finish</button>
+                                            </div>
+                                        </div>
+                                    </div><!-- <div class="container rounded-2 " > Question9 -->
+
+                                            <div class="container rounded-2 d-none" id="question8">
+                                                <div class="row justify-content-center pt-2">
+                                                    <p class="form-label text-left fs-4 fw-bold-custom lbl-question">8.)In the past 12 months, have you had any problems with your memory? (e.g. remembering what you had for dinner last night or where you were born)</p>
+                                                </div>
+                                                <div class="row justify-content-center">
+                                                    <div class="pb-1 pe-1 col-md-3">
+                                                        <input type="radio" class="btn-check " id="Yes8" name="question8N">
+                                                        <label class="btn w-100 btn-check-custom" for="Yes8" >Yes</label>
+                                                    </div>
+                                                    <div class="pb-1 pe-1 col-md-3">
+                                                        <input type="radio" class="btn-check " id="No8" name="question8N">
+                                                        <label class="btn w-100 btn-check-custom" for="No8" >No</label>
+                                                    </div>
+                                                    <div class="pb-1 pe-1 col-md-3">
+                                                        <input type="radio" class="btn-check " id="Dontknow8" name="question8N">
+                                                        <label class="btn w-100 btn-check-custom" for="Dontknow8" >Don't know</label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="justify-content-end d-flex pt-2">
+                                                        <div class="pe-2">
+                                                            <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question7">Prev</button>
+                                                        </div>
+                                                        <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question9">Next</button>
+                                                    </div>
+                                                </div>
+                                            </div><!-- <div class="container rounded-2 " > Question9 -->
+
+                                                <div class="container rounded-2 d-none" id="question9">
+                                                    <div class="row justify-content-center pt-2">
+                                                        <p class="form-label text-left fs-4 fw-bold-custom lbl-question">9.)How often have you felt lonely or isolated from those around you?</p>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Never9" name="question9N">
+                                                            <label class="btn w-100 btn-check-custom" for="Never9" >Never</label>
+                                                        </div>
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Rare9" name="question9N">
+                                                            <label class="btn w-100 btn-check-custom" for="Rare9" >Rarely</label>
+                                                        </div>
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Some9" name="question9N">
+                                                            <label class="btn w-100 btn-check-custom" for="Some9" >Sometimes</label>
+                                                        </div>
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Often9" name="question9N">
+                                                            <label class="btn w-100 btn-check-custom" for="Often9" >Often</label>
+                                                        </div>
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Always9" name="question9N">
+                                                            <label class="btn w-100 btn-check-custom" for="Always9" >Always</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="justify-content-end d-flex pt-2">
+                                                            <div class="pe-2">
+                                                                <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question8">Prev</button>
+                                                            </div>
+                                                            <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question10">Next</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="container rounded-2 " > Question10 -->
+                                                    <div class="container rounded-2 d-none" id="question10">
+                                                        <div class="row justify-content-center pt-2">
+                                                            <p class="form-label text-left fs-4 fw-bold-custom lbl-question">10.)How hard is it for you to pay for the very basics like food, housing, medical care (including medicines), and utilities (like electric, gas, oil, or water)? Would you say it is:</p>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Very10" name="question10N">
+                                                                <label class="btn w-100 btn-check-custom" for="Very10" >Very Hard</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Some10" name="question10N">
+                                                                <label class="btn w-100 btn-check-custom" for="Some10" >Somewhat hard</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Not10" name="question10N">
+                                                                <label class="btn w-100 btn-check-custom" for="Not10" >Not hard at all</label>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="justify-content-end d-flex pt-2">
+                                                                <div class="pe-2">
+                                                                    <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question9">Prev</button>
+                                                                </div>
+                                                                <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question11">Next</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                <!-- <div class="container rounded-2 " > Question11 -->
+                                                <div class="container rounded-2 d-none" id="question11">
+                                                    <div class="row justify-content-center pt-2">
+                                                        <p class="form-label text-left fs-4 fw-bold-custom lbl-question">11.)What is your living situation today?</p>
+                                                    </div>
+                                                    <div class="row justify-content-center">
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Steady11" name="question11N">
+                                                            <label class="btn w-100 btn-check-custom" for="Steady11" >I have a steady place to live</label>
+                                                        </div>
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Worried11" name="question11N">
+                                                            <label class="btn w-100 btn-check-custom" for="Worried11" >I have a place to live today, but I am worries about losing it in the future</label>
+                                                        </div>
+                                                        <div class="pb-1 pe-1 col-md-3">
+                                                            <input type="radio" class="btn-check " id="Nothing11" name="question11N">
+                                                            <label class="btn w-100 btn-check-custom" for="Nothing11" >I do not have a steady place to live</label>
+                                                        </div>                                                        
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="justify-content-end d-flex pt-2">
+                                                            <div class="pe-2">
+                                                                <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question10">Prev</button>
+                                                            </div>
+                                                            <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question12">Next</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="container rounded-2 " > Question12 -->
+                                                    <div class="container rounded-2 d-none" id="question12">
+                                                        <div class="row justify-content-center pt-2">
+                                                            <p class="form-label text-left fs-4 fw-bold-custom lbl-question">12.)Think about the place you live. Do you have problems with: Choose all that apply.</p>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="checkbox" class="btn-check " id="Q1-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q1-12" >Pests such as bugs, ants, or mice</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="checkbox" class="btn-check " id="Q2-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q2-12" >Mold</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="checkbox" class="btn-check " id="Q3-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q3-12" >Lead paint or pipes</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="checkbox" class="btn-check " id="Q4-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q4-12" >Lack of heat</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="checkbox" class="btn-check " id="Q5-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q5-12" >Oven or stove not working</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="checkbox" class="btn-check " id="Q6-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q6-12" >Smoke detectors missing or not working</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="checkbox" class="btn-check " id="Q7-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q7-12" >Water leaks</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Q8-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q8-12" >All of the above</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Q9-12" name="question12N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q9-12" >None of the above</label>
+                                                            </div>
+                                                                                                               
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="justify-content-end d-flex pt-2">
+                                                                <div class="pe-2">
+                                                                    <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question11">Prev</button>
+                                                                </div>
+                                                                <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question13">Next</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                <!-- <div class="container rounded-2 " > Question13 -->
+                                                    <div class="container rounded-2 d-none" id="question13">
+                                                        <div class="row justify-content-center pt-2">
+                                                            <p class="form-label text-left fs-4 fw-bold-custom lbl-question">13.)In the past month, how often were you worried your food would run out before you could buy more?</p>
+                                                        </div>
+                                                        <div class="row justify-content-center">
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Q1-13" name="question13N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q1-13" >Often</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Q2-13" name="question13N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q2-13" >Sometimes</label>
+                                                            </div>
+                                                            <div class="pb-1 pe-1 col-md-3">
+                                                                <input type="radio" class="btn-check " id="Q3-13" name="question13N">
+                                                                <label class="btn w-100 btn-check-custom" for="Q3-13" >Never</label>
+                                                            </div>
+                                                                                                               
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="justify-content-end d-flex pt-2">
+                                                                <div class="pe-2">
+                                                                    <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question12">Prev</button>
+                                                                </div>
+                                                                <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question14">Next</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <div class="container rounded-2 " > Question14 -->
+                                                        <div class="container rounded-2 d-none" id="question14">
+                                                            <div class="row justify-content-center pt-2">
+                                                                <p class="form-label text-left fs-4 fw-bold-custom lbl-question">14.)In the past month, has a lack of reliable transportation kept you from medical appointments or from getting things needed for daily living?</p>
+                                                            </div>
+                                                            <div class="row justify-content-center">
+                                                                <div class="pb-1 pe-1 col-md-3">
+                                                                    <input type="radio" class="btn-check " id="Q1-14" name="question14N">
+                                                                    <label class="btn w-100 btn-check-custom" for="Q1-14" >Yes</label>
+                                                                </div>
+                                                                <div class="pb-1 pe-1 col-md-3">
+                                                                    <input type="radio" class="btn-check " id="Q2-14" name="question14N">
+                                                                    <label class="btn w-100 btn-check-custom" for="Q2-14" >No</label>
+                                                                </div>
+                                                                <div class="pb-1 pe-1 col-md-3">
+                                                                    <input type="radio" class="btn-check " id="Q3-14" name="question14N">
+                                                                    <label class="btn w-100 btn-check-custom" for="Q3-14" >I don't know</label>
+                                                                </div>
+                                                                                                                   
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="justify-content-end d-flex pt-2">
+                                                                    <div class="pe-2">
+                                                                        <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question13">Prev</button>
+                                                                    </div>
+                                                                    <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question15">Next</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- <div class="container rounded-2 " > Question14 -->
+                                                            <div class="container rounded-2 d-none" id="question15">
+                                                                <div class="row justify-content-center pt-2">
+                                                                    <p class="form-label text-left fs-4 fw-bold-custom lbl-question">15.)What phone number do you prefer we use to contact you?</p>
+                                                                </div>
+                                                                <div class="row left">                                                                    
+                                                                    <div class="pb-1 pe-1 col-md-3">
+                                                                        <input class="form-control" input="text" id="Q1-15" name="question15N" placeholder="Contact Number">    
+
+                                                                    </div>                                                                                                       
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="justify-content-end d-flex pt-2">
+                                                                        <div class="pe-2">
+                                                                            <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question14">Prev</button>
+                                                                        </div>
+                                                                        <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="question16">Next</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- <div class="container rounded-2 " > Question16 -->
+                                                        <div class="container rounded-2 d-none" id="question16">
+                                                            <div class="row justify-content-center pt-2">
+                                                                <p class="form-label text-left fs-4 fw-bold-custom lbl-question">16.)Do you have an email address you prefer we use to contact you?</p>
+                                                            </div>
+                                                            <div class="row justify-content-center">
+                                                                <div class="pb-1 pe-1 col-md-3">
+                                                                    <input type="radio" class="btn-check " id="Q1-16" name="question16N">
+                                                                    <label class="btn w-100 btn-check-custom" for="Q1-16" >Yes</label>
+                                                                </div>
+                                                                <div class="pb-1 pe-1 col-md-3">
+                                                                    <input type="radio" class="btn-check " id="Q2-16" name="question16N" value="NoEmail">
+                                                                    <label class="btn w-100 btn-check-custom" for="Q2-16" >No, I am not currently able to access email from a phone or computer in my home</label>
+                                                                </div>                                                                
+                                                                                                                   
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="justify-content-end d-flex pt-2">
+                                                                    <div class="pe-2">
+                                                                        <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious16" data-prev="question15">Prev</button>
+                                                                    </div>
+                                                                    <button class="btn btn-secondary btn-next btn-progress" id="btnNext16" data-next="question17">Next</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <!-- <div class="container rounded-2 " > Question17 -->
+                                                            <div class="container rounded-2 d-none" id="question17">
+                                                                <div class="row justify-content-center pt-2">
+                                                                    <p class="form-label text-left fs-4 fw-bold-custom lbl-question">17.)Client's email address (if applicable)</p>
+                                                                </div>
+                                                                <div class="row left">                                                                    
+                                                                    <div class="pb-1 pe-1 col-md-3">
+                                                                        <input class="form-control" type="text" id="Q1-17" name="question17N" placeholder="E-Mail Address">                                                                        
+                                                                    </div>                                                                                                       
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="justify-content-end d-flex pt-2">
+                                                                        <div class="pe-2">
+                                                                            <button class="btn btn-secondary btn-prev btn-progress" id="btnPrevious" data-prev="question16">Prev</button>
+                                                                        </div>
+                                                                        <!-- <button class="btn btn-secondary btn-next btn-progress" id="btnNext" data-next="ending">Finish</button> -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <!-- <div class="container rounded-2 " > ENDING -->
+                                                                <div class="container rounded-2 d-none" id="ending">
+                                                                    <div class="row justify-content-center pt-2">
+                                                                        <p class="form-label text-center fs-4 fw-bold-custom lbl-question">Thank you for your time, this will be worked on by our care coach managers</p>
+                                                                        <p class="form-label text-center fs-4 fw-bold-custom lbl-question">you can click Exit or close this window.</p>
+                                                                    </div>
+                                                                    
+                                                                        <div class="justify-content-end d-flex pt-2">
+                                                                            <div class="pe-2">
+                                                                                <button class="btn btn-secondary btn-prev btn-progress" id="exit">Exit</button>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                               
+                        </div><!-- <div class="container rounded-2 " > Question2 -->
+                </div>
+            </div>
+        </div>
+    </div> 
+{% endblock %}
+   

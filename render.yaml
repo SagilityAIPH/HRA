@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: hra-sms-app
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn main:app --worker-class eventlet -w 1 -b 0.0.0.0:10000
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12
+    autoDeploy: true
