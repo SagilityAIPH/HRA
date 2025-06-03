@@ -1,7 +1,10 @@
-from threading import Timer
-import webbrowser
+# from threading import Timer
+# import webbrowser
+import eventlet
+eventlet.monkey_patch()
+
 from website import create_app, socketio
-import ssl
+# import ssl
 
 # cert_file = 'certificate.pem'
 # key_file = 'private_key.pem'
